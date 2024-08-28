@@ -11,10 +11,13 @@ This Python script verifies whether the IP addresses of nodes in a data center a
 
 ## Requirements
 
-- Python 3.8 or later
+- Python 3.8 or later (if not using Docker)
+- Docker (optional, if you prefer to use Docker)
 - Required Python packages listed in `requirements.txt`
 
 ## Installation
+
+### Option 1: Running Locally
 
 1. **Clone the Repository:**
     ```bash
@@ -33,18 +36,36 @@ This Python script verifies whether the IP addresses of nodes in a data center a
     pip install -r requirements.txt
     ```
 
-## Usage
-
-1. **Run the Script:**
+4. **Run the Script:**
     ```bash
     python main.py
     ```
 
-2. **Enter the Data Center ID:**
+5. **Enter the Data Center ID:**
     When prompted, enter the data center ID (e.g., `cm1`). The script will fetch data from the Internet Computer API, perform RDAP lookups, and provide a summary of the results.
 
-## Example Output
+### Option 2: Running with Docker
 
+1. **Clone the Repository:**
+    ```bash
+    git clone <repository-url>
+    cd icp-dc-verification
+    ```
+
+2. **Build the Docker Image:**
+    ```bash
+    docker build -t icp-dc-verification .
+    ```
+
+3. **Run the Docker Container:**
+    ```bash
+    docker run -it icp-dc-verification
+    ```
+
+4. **Enter the Data Center ID:**
+    When prompted, enter the data center ID (e.g., `cm1`). The script will run inside the Docker container and provide a summary of the results.
+
+## Example Output
 ```plaintext
 Enter Data Center ID (e.g., cm1): cm1
 Data Center Country: LK, Region: Asia
